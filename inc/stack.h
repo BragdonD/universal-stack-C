@@ -17,6 +17,6 @@ void* stack_pop(stack* q);
 bool stack_empty(stack* q);
 void* stack_front(stack *q);
 size_t stack_size(stack* q);
-void stack_free(stack* q);
+void stack_free(stack* q, void (*free_data)(void*));
 
 #endif

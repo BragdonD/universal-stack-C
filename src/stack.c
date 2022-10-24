@@ -42,8 +42,8 @@ size_t stack_size(stack* q) {
     return q->size;
 }
 
-void stack_free(stack* q) {
-    linkedList_free(q->head);
+void stack_free(stack* q, void (*free_data)(void*)) {
+    linkedList_free(q->head, free_data);
     free(q);
 }
 
