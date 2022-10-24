@@ -25,6 +25,7 @@ bool stack_push(stack* q, void* elem) {
     return true;
 }
 
+
 /// @brief Function to pop an element from the top of the stack
 /// @param q a stack
 /// @return the data of the removed element
@@ -33,11 +34,11 @@ void* stack_pop(stack* q) {
     void* data = NULL;
     if(temp == NULL) return NULL;
     data = temp->data;
-    q->head = temp->next;
+    q->head = temp;
     q->size = q->size - 1;
-    free(temp);
     return data;
 }
+
 
 /// @brief Function to test if a stack is empty
 /// @param q a stack
